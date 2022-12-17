@@ -15,7 +15,14 @@ const Favourite = {
   async afterRender() {
     const posts = document.querySelector('post-list');
     const response = await FavoriteRestaurantdb.getAllRestaurants();
-    posts.item = response;
+    if (response.length > 0) {
+      posts.item = response;
+    } else {
+      throw {
+        title: 'Your Favourite is empty !',
+        message: 'Please add it first, then come back again',
+      };
+    }
   },
 };
 

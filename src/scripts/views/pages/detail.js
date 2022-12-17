@@ -30,30 +30,39 @@ const Detail = {
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: restaurantDetail.restaurant,
     });
+    const offlineElement = document.querySelector('#offline');
     const inputName = document.querySelector('#input-name');
     const inputReview = document.querySelector('#input-review');
     const btnSubmit = document.querySelector('#submit-review');
+    if (!navigator.onLine) {
+      offlineElement.classList.remove('hide');
+      inputName.disabled = true;
+      inputReview.disabled = true;
+      btnSubmit.disabled = true;
+    }
     btnSubmit.addEventListener('click', async (e) => {
       e.preventDefault();
-      if (inputName.value === '') {
-        inputName.focus();
-        inputName.placeholder = 'Input your name...';
-      } else if (inputReview.value === '') {
-        inputReview.focus();
-        inputReview.placeholder = 'Input your review...';
-      } else {
-        console.log(e);
-        const body = {
-          id: url.id,
-          name: inputName.value,
-          review: inputReview.value,
-        };
-        const response = await Restaurant.review(body);
-        if (!response.error) {
-          inputName.value = '';
-          inputReview.value = '';
-          postDetail.reviews = response.customerReviews;
-          postDetail.render();
+      if (navigator.onLine) {
+        if (inputName.value === '') {
+          inputName.focus();
+          inputName.placeholder = 'Input your name...';
+        } else if (inputReview.value === '') {
+          inputReview.focus();
+          inputReview.placeholder = 'Input your review...';
+        } else {
+          console.log(e);
+          const body = {
+            id: url.id,
+            name: inputName.value,
+            review: inputReview.value,
+          };
+          const response = await Restaurant.review(body);
+          if (!response.error) {
+            inputName.value = '';
+            inputReview.value = '';
+            postDetail.reviews = response.customerReviews;
+            postDetail.render();
+          }
         }
       }
     });
