@@ -1,0 +1,433 @@
+/* Mobile First */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+$nav-width: 70%;
+$nav-header-height: 141.75px;
+$color-bg: #fefefe;
+$color-primary: #459f2e;
+$color-primary-light: #8bc34a;
+$color-secondary: #0096ff;
+$color-third: #00d7ff;
+$color-fourth: #72ffff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: $color-bg;
+}
+.bg-primary {
+  background-color: $color-primary;
+  transition: ease-in-out 0.3s;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-primary;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  height: 56px;
+  padding: 16px;
+}
+.header__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+#menu {
+  background: none;
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin-right: 32px;
+  display: block;
+}
+nav {
+  z-index: 10;
+  background-color: #fff;
+  width: 70%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+
+  .nav__header {
+    width: 100%;
+    background: linear-gradient(
+      45deg,
+      $color-primary 45%,
+      $color-primary-light 100%
+    );
+    height: $nav-header-height;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    color: white;
+    .image__profile {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      object-fit: scale-down;
+    }
+    .title__name {
+      font-size: 13px;
+    }
+    .title__email {
+      font-weight: 400;
+      font-size: 11px;
+    }
+  }
+  .nav__list {
+    padding: 16px;
+    .nav__item {
+      display: list-item;
+      list-style: none;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 4px;
+      a {
+        margin: auto;
+        display: block;
+        font-size: 14px;
+        padding: 1em;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+      circle,
+      rgba(73, 73, 73, 0.5) 0%,
+      rgba(13, 13, 13, 0.5) 100%
+    ),
+    url(../public/images/heros/hero-image_4.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-top: 56px;
+  width: 100%;
+  height: 180px;
+  .hero__inner {
+    color: white;
+    text-align: center;
+    margin: 16px 50px;
+    .hero__title {
+      font-size: 24px;
+    }
+    .hero__tagline {
+      font-size: 14px;
+      color: gold;
+    }
+  }
+}
+.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+main {
+  width: 100%;
+  padding: 32px 16px;
+}
+.post__label {
+  font-size: 24px;
+  color: $color-primary;
+  margin-bottom: 8px;
+}
+.posts {
+  display: grid;
+  gap: 16px;
+  post-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    .post-item__thumbnail {
+      width: 100%;
+    }
+    .post-item__content {
+      padding: 16px;
+      .post-item__title {
+        margin-bottom: 4px;
+        a {
+          display: block;
+          min-width: 44px;
+          min-height: 44px;
+          font-size: 22px;
+          color: black;
+          font-weight: 700;
+          text-decoration: none;
+        }
+      }
+      .post-item__info {
+        display: flex;
+        justify-content: space-between;
+        color: #424242;
+        .city {
+          font-size: 14px;
+          font-weight: 400;
+        }
+        .rating {
+          font-size: 14px;
+          font-weight: 400;
+          &:before {
+            content: '\2605';
+            color: #f8be1e;
+          }
+        }
+      }
+      .post-item__description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines to show */
+        -webkit-box-orient: vertical;
+        line-clamp: 4;
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
+.post-detail {
+  margin: 4px;
+  h1 {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  h2 {
+    font-size: 21px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 2em;
+  }
+  .detail-header {
+    margin-bottom: 24px;
+  }
+  .thumbnail {
+    width: 100%;
+    border-radius: 16px;
+  }
+  .detail-info {
+    .restaurant {
+      display: block;
+      padding: 8px 0;
+      margin-bottom: 8px;
+    }
+    .address,
+    .city {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #333;
+      &::before {
+        margin-left: 24px;
+      }
+    }
+    .rating {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      &:before {
+        content: '\2605 ';
+        color: #f8be1e;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #999;
+    li {
+      a {
+        font-size: 18px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        color: #333;
+        text-align: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 8px 24px;
+        text-decoration: none;
+        &:hover {
+          border-bottom: 2px solid $color-primary-light;
+        }
+      }
+    }
+  }
+  .content {
+    display: none;
+    padding: 8px;
+    background-color: rgb(165 211 153 / 17%);
+  }
+  .active {
+    display: block;
+  }
+  .link-active {
+    border-bottom: 2px solid $color-primary;
+  }
+  #descriptions p {
+    line-height: 2.3em;
+  }
+  .post-menu {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 8px 16px;
+    padding: 8px;
+    h3 {
+      font-size: 21px;
+      padding: 8px;
+    }
+    ul {
+      list-style: none;
+      li {
+        padding: 8px;
+      }
+    }
+  }
+  .post-review {
+    display: grid;
+    padding: 8px;
+    .review-item {
+      width: 100%;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 8px auto;
+      .review-name {
+        font-size: 18px;
+        font-weight: 700;
+        padding: 4px auto;
+      }
+      .review-content {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      .review-date {
+        font-size: 12px;
+        color: #777;
+      }
+    }
+  }
+}
+.form-review {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  .form-title {
+    margin-bottom: 8px;
+  }
+  label {
+    display: block;
+  }
+  .form-input {
+    width: 100%;
+    padding: 16px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #999;
+  }
+  .form-input:focus {
+    transition: ease-in-out, width 0.35s ease-in-out;
+  }
+  .btn-submit {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 19px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: $color-primary;
+    color: white;
+  }
+  .btn-submit:hover {
+    background-color: $color-primary-light;
+  }
+}
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  .copyright {
+    color: #333;
+    font-size: 14px;
+  }
+}
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: $color-primary;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 16px;
+  z-index: 100;
+  transition: ease-out 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+  transition: ease-in 0.2s;
+}
+/*
+  Button Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,221 @@
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+    margin: auto;
+  }
+  header {
+    background: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  #menu {
+    display: none;
+  }
+  nav {
+    display: flex;
+    background: none;
+    position: relative;
+    width: 100%;
+    transform: translate(0, 0);
+    .nav__header {
+      display: none;
+    }
+    .nav__list {
+      margin-left: auto;
+      padding: 0;
+      .nav__item {
+        display: inline;
+        margin: auto 16px;
+        a {
+          display: inline-block;
+          color: white;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .hero {
+    height: 300px;
+    margin-top: 0;
+    .hero__inner {
+      .hero__title {
+        font-size: 32px;
+      }
+      .hero__tagline {
+        font-size: 18px;
+      }
+    }
+  }
+  .post__label {
+    text-align: center;
+    font-size: 30px;
+    padding: 24px;
+  }
+  .posts {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    post-item {
+      .post-item__thumbnail {
+        height: 238px;
+      }
+      .post-item__content {
+        .post-item__title {
+          margin-bottom: 4px;
+          a {
+            font-size: 24px;
+          }
+        }
+        .post-item__info {
+          .city,
+          .rating {
+            font-size: 16px;
+          }
+        }
+        .post-item__description {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .post-detail {
+    margin: 4px;
+    h1 {
+      font-size: 30px;
+      font-weight: 900;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 2em;
+    }
+    .detail-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 16px;
+      img {
+        grid-column-end: 2;
+      }
+    }
+    .thumbnail {
+      width: 100%;
+      border-radius: 16px;
+    }
+    .restaurant {
+      display: block;
+      padding: 8px 0;
+    }
+    .address,
+    .city {
+      font-size: 18px;
+      color: #333;
+    }
+
+    #descriptions {
+      padding: 16px;
+      p {
+        inline-size: 580px;
+        overflow-wrap: break-word;
+      }
+    }
+
+    .post-review {
+      grid-template-columns: auto auto;
+      gap: 3px 16px;
+
+      .review-name {
+        margin-bottom: 8px;
+      }
+      .review-content {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      .review-date {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+  .hero {
+    margin: 0;
+    min-width: 1000px;
+    height: 480px;
+    .hero__inner {
+      .hero__title {
+        font-size: 48px;
+      }
+      .hero__tagline {
+        font-size: 24px;
+      }
+    }
+  }
+  .posts {
+    grid-template-columns: repeat(3, 1fr); // 1fr 1fr 1fr;
+    gap: 24px;
+    post-item {
+      .post-item__thumbnail {
+        height: 220px;
+        object-fit: cover;
+      }
+      .post-item__content {
+        .post-item__title {
+          margin-bottom: 4px;
+          a {
+            font-size: 24px;
+          }
+        }
+        .post-item__info {
+          .city,
+          .rating {
+            font-size: 16px;
+          }
+        }
+        .post-item__description {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .post-detail {
+    #descriptions {
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        inline-size: 850px;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+  .skip-link {
+    top: -100px;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 16px;
+  }
+  .form-review {
+    .btn-submit {
+      font-size: 20px;
+      border-radius: 6px;
+      padding: 12px 24px;
+    }
+  }
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 24px;
+    .copyright {
+      font-size: 18px;
+    }
+  }
+}
