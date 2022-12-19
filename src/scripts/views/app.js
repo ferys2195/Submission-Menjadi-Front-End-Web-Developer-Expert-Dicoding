@@ -1,6 +1,7 @@
 import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/drawer-initiator';
+import ErrorPage from './pages/error-page';
 
 class App {
   constructor({ button, drawer, content, menuItem }) {
@@ -23,8 +24,13 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+    try {
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+    } catch (error) {
+      this._content.innerHTML = ErrorPage.render();
+      ErrorPage.afterRender(error);
+    }
     this._content.focus();
     const skipLinkElem = document.querySelector('.skip-link');
     skipLinkElem.addEventListener('click', (event) => {

@@ -144,7 +144,9 @@ nav {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-
+.hide {
+  display: none;
+}
 main {
   width: 100%;
   padding: 32px 16px;
@@ -351,6 +353,14 @@ main {
   width: 100%;
   padding: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  .offline {
+    padding: 16px;
+    margin: 8px 0 16px 0;
+    color: #721c24;
+    line-height: 1.5em;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
   .form-title {
     margin-bottom: 8px;
   }
@@ -381,6 +391,11 @@ main {
   }
   .btn-submit:hover {
     background-color: $color-primary-light;
+  }
+  .btn-submit:disabled,
+  .btn-submit[disabled] {
+    opacity: 0.65;
+    cursor: not-allowed;
   }
 }
 footer {
@@ -430,4 +445,31 @@ footer {
   font-size: 18px;
   color: white;
   cursor: pointer;
+}
+
+.error {
+  text-align: center;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  h1,
+  p {
+    margin-bottom: 16px;
+  }
+
+  button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 4px 16px;
+    border: 1px solid $color-primary-light;
+    color: $color-primary;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    color: white;
+    background-color: $color-primary;
+  }
 }

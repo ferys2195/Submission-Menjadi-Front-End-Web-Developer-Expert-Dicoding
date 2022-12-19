@@ -6,6 +6,7 @@ class FormReview extends HTMLElement {
   render() {
     this.innerHTML = /* html */ `
         <form class="form-review">
+            <div id="offline" class="offline hide">You're offline. Check your connection before add new review !</div>
             <h3 class="form-title">Create New Review</h3>
             <div class="mb-3">
               <label for="input-name" class="form-label">Name</label>
