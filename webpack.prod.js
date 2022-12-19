@@ -30,6 +30,7 @@ module.exports = merge(common, {
     }),
     new WebpackPwaManifest({
       filename: 'manifest.json',
+      fingerprints: false,
       id: 'indoresto-pwa-v1',
       name: 'Indoresto',
       short_name: 'Indoresto',
