@@ -2,6 +2,7 @@ import Restaurant from '../../data/restaurant';
 import UrlParser from '../../routes/url-parser';
 import '../../components/post-detail';
 import '../../components/form-review';
+import FavoriteRestaurantdb from '../../data/favourite';
 
 import LikeButtonPresenter from '../../utils/like-button-presenter';
 
@@ -28,6 +29,7 @@ const Detail = {
     postDetail.render();
     LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurant: FavoriteRestaurantdb,
       restaurant: restaurantDetail.restaurant,
     });
     const offlineElement = document.querySelector('#offline');
