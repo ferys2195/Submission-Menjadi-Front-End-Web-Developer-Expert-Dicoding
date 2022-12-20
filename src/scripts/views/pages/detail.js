@@ -3,7 +3,7 @@ import UrlParser from '../../routes/url-parser';
 import '../../components/post-detail';
 import '../../components/form-review';
 
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 
 const Detail = {
   async render() {
@@ -26,7 +26,7 @@ const Detail = {
     postDetail.restaurant = restaurantDetail.restaurant;
     postDetail.reviews = restaurantDetail.restaurant.customerReviews;
     postDetail.render();
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: restaurantDetail.restaurant,
     });

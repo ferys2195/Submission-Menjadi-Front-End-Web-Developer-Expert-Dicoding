@@ -1,6 +1,6 @@
 import FavoriteRestaurantdb from '../data/favourite';
 
-const LikeButtonInitiator = {
+const LikeButtonPresenter = {
   async init({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
@@ -11,7 +11,7 @@ const LikeButtonInitiator = {
   async _renderButton() {
     const { id } = this._restaurant;
     if (await this._isRestaurantExist(id)) {
-      this._renderLiked();
+      this._renderUnLike();
     } else {
       this._renderLike();
     }
@@ -35,7 +35,7 @@ const LikeButtonInitiator = {
     });
   },
 
-  _renderLiked() {
+  _renderUnLike() {
     this._likeButtonContainer.innerHTML = /* html */ `
       <button aria-label="unlike this restaurant" id="likeButton" class="like">
           <i class="fa-solid fa-heart" aria-hidden="true"></i>
@@ -49,4 +49,4 @@ const LikeButtonInitiator = {
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;
