@@ -11,10 +11,19 @@ class PostItem extends HTMLElement {
   render() {
     this.innerHTML = /* html */ `
         <article class="post_item">
-          <img class="post-item__thumbnail lazyload" data-src="https://restaurant-api.dicoding.dev/images/small/${this._item.pictureId}"
-            alt="Restoran ${this._item.name} di kota ${this._item.city} dengan rating ${this._item.rating}">
+          <img class="post-item__thumbnail lazyload" src="https://via.placeholder.com/480.png?text=${this._item.name.replace(
+            ' ',
+            '+'
+          )}" data-src="https://restaurant-api.dicoding.dev/images/small/${
+      this._item.pictureId
+    }"
+            alt="Restoran ${this._item.name} di kota ${
+      this._item.city
+    } dengan rating ${this._item.rating}">
           <div class="post-item__content">
-            <h1 class="post-item__title"><a href="/#/detail/${this._item.id}">${this._item.name}</a></h1>
+            <h1 class="post-item__title"><a href="/#/detail/${this._item.id}">${
+      this._item.name
+    }</a></h1>
             <div class="post-item__info">
               <h2 class="city">${this._item.city}</h2>
               <h2 class="rating">${this._item.rating}</h2>

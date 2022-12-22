@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
     "serve": "http-server dist",
-    "build-serve": "npm run build && npm run serve"
+    "build-serve": "npm run build && npm run serve",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
@@ -38,8 +39,10 @@
     "node-sass": "^8.0.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
+    "sharp": "^0.31.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
