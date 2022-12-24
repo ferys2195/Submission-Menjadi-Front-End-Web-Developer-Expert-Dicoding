@@ -2,8 +2,6 @@ import routes from '../routes/routes';
 import UrlParser from '../routes/url-parser';
 import DrawerInitiator from '../utils/drawer-initiator';
 import ErrorPage from './pages/error-page';
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class App {
   constructor({ button, drawer, content, menuItem }) {

@@ -5,6 +5,8 @@ import '../styles/responsive.scss';
 import swRegister from './utils/sw-register';
 import App from './views/app';
 import StickyHeaderInitiator from './utils/sticky-header-initiator';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 StickyHeaderInitiator.init(document.querySelector('header'));
 
