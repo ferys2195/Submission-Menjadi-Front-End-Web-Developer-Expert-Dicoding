@@ -354,14 +354,6 @@ main {
   width: 100%;
   padding: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  .offline {
-    padding: 16px;
-    margin: 8px 0 16px 0;
-    color: #721c24;
-    line-height: 1.5em;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-  }
   .form-title {
     margin-bottom: 8px;
   }
@@ -473,4 +465,20 @@ footer {
     color: white;
     background-color: $color-primary;
   }
+}
+.alert-success {
+  padding: 16px;
+  margin: 8px 0 16px 0;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  line-height: 1.5em;
+}
+.alert-danger {
+  padding: 16px;
+  margin: 8px 0 16px 0;
+  color: #721c24;
+  line-height: 1.5em;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }
