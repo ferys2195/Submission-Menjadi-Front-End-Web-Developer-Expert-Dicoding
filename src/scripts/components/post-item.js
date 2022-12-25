@@ -11,7 +11,7 @@ class PostItem extends HTMLElement {
   render() {
     this.innerHTML = /* html */ `
         <article class="post_item">
-          <img class="post-item__thumbnail" src="https://restaurant-api.dicoding.dev/images/small/${this._item.pictureId}"
+          <img class="post-item__thumbnail lazyload" src="./placeholder.png" data-src="https://restaurant-api.dicoding.dev/images/small/${this._item.pictureId}"
             alt="Restoran ${this._item.name} di kota ${this._item.city} dengan rating ${this._item.rating}">
           <div class="post-item__content">
             <h1 class="post-item__title"><a href="/#/detail/${this._item.id}">${this._item.name}</a></h1>

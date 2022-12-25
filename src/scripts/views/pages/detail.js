@@ -2,8 +2,9 @@ import Restaurant from '../../data/restaurant';
 import UrlParser from '../../routes/url-parser';
 import '../../components/post-detail';
 import '../../components/form-review';
+import FavoriteRestaurantdb from '../../data/favourite';
 
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 
 const Detail = {
   async render() {
@@ -26,16 +27,20 @@ const Detail = {
     postDetail.restaurant = restaurantDetail.restaurant;
     postDetail.reviews = restaurantDetail.restaurant.customerReviews;
     postDetail.render();
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurant: FavoriteRestaurantdb,
       restaurant: restaurantDetail.restaurant,
     });
-    const offlineElement = document.querySelector('#offline');
+
     const inputName = document.querySelector('#input-name');
     const inputReview = document.querySelector('#input-review');
     const btnSubmit = document.querySelector('#submit-review');
     if (!navigator.onLine) {
-      offlineElement.classList.remove('hide');
+      this._showAlert(
+        'danger',
+        "You're offline. Check your connection before add new review !"
+      );
       inputName.disabled = true;
       inputReview.disabled = true;
       btnSubmit.disabled = true;
@@ -62,10 +67,28 @@ const Detail = {
             inputReview.value = '';
             postDetail.reviews = response.customerReviews;
             postDetail.render();
+            this._showAlert('success', 'Add Review has been successfully !');
           }
         }
+      } else {
+        this._showAlert(
+          'danger',
+          "You're offline. Check your connection before add new review !"
+        );
       }
     });
+  },
+  _showAlert(type, message) {
+    const offlineElement = document.querySelector('#alert');
+    offlineElement.innerHTML = message;
+    switch (type) {
+      case 'success':
+        offlineElement.className = 'alert-success';
+        break;
+      case 'danger':
+        offlineElement.className = 'alert-danger';
+        break;
+    }
   },
 };
 

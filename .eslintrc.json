@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jasmine": true
   },
   "extends": "airbnb-base",
   "overrides": [],
@@ -18,7 +19,9 @@
     "import/no-extraneous-dependencies": 0,
     "no-restricted-globals": 0,
     "object-curly-newline": 0,
-    "no-throw-literal": 0
+    "no-throw-literal": 0,
+    "comma-dangle": 0
   },
-  "ignorePatterns": ["**/*.html"]
+  "ignorePatterns": ["**/*.html"],
+  "plugins": ["jasmine"]
 }

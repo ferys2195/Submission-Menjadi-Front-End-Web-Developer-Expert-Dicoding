@@ -121,7 +121,7 @@ nav {
       rgba(73, 73, 73, 0.5) 0%,
       rgba(13, 13, 13, 0.5) 100%
     ),
-    url(../public/images/heros/hero-image_4.jpg);
+    url(../public/images/heros/hero-image_4-small.jpg);
   background-size: cover;
   background-position: center;
   margin-top: 56px;
@@ -167,6 +167,8 @@ main {
     background-color: white;
     .post-item__thumbnail {
       width: 100%;
+      height: auto;
+      object-fit: cover;
     }
     .post-item__content {
       padding: 16px;
@@ -353,14 +355,6 @@ main {
   width: 100%;
   padding: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  .offline {
-    padding: 16px;
-    margin: 8px 0 16px 0;
-    color: #721c24;
-    line-height: 1.5em;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-  }
   .form-title {
     margin-bottom: 8px;
   }
@@ -472,4 +466,20 @@ footer {
     color: white;
     background-color: $color-primary;
   }
+}
+.alert-success {
+  padding: 16px;
+  margin: 8px 0 16px 0;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  line-height: 1.5em;
+}
+.alert-danger {
+  padding: 16px;
+  margin: 8px 0 16px 0;
+  color: #721c24;
+  line-height: 1.5em;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }
