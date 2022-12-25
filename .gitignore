@@ -1,7 +1,11 @@
 # ignore all zip
 *.zip
 
-
-# ignore node_modules
+.idea
+.vscode
+dist
 node_modules
-
+package-lock.json
+.env
+.test.env
+e2e/outputs
