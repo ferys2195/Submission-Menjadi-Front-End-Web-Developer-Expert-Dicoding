@@ -154,6 +154,8 @@
 @media screen and (min-width: 1200px) {
   .container {
     width: 1140px;
+    min-height: 100vh;
+    margin-bottom: 70px;
   }
   .hero {
     margin: 0;
@@ -176,7 +178,7 @@
     }
   }
   .posts {
-    grid-template-columns: repeat(3, 1fr); // 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     post-item {
       .post-item__thumbnail {
